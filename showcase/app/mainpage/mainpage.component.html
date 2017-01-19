@@ -1,0 +1,32 @@
+<div class="layout-wrapper">
+    <div id="layout-sidebar" [ngClass]="{'active':mobileMenuActive}">
+        <span class="layout-logo">
+            <a href="#" class="sidebar-logo" >
+                <img alt="logo" src="showcase/resources/images/primeng-sidebar.svg" />
+            </a>
+            <a href="#" id="menu-button-mobile" (click)="toggleMenu($event)" [ngClass]="{'active':mobileMenuActive}">
+                <img alt="logo" src="showcase/resources/images/menuicon.svg"/>
+            </a>
+        </span>
+
+        <a id="menu_input" #inputmenutitle [class.active-menuitem]="inputmenutitle.id == activeMenuId" (click)="activeMenuId = inputmenutitle.id">
+            <img src="showcase/resources/images/mono/input.svg" />
+            <span>Input</span>
+        </a>
+        <div [ngClass]="{submenushow: (inputmenutitle.id == activeMenuId), 'submenuhide': (inputmenutitle.id != activeMenuId)}">
+
+            <a (click)="navigate('/componentone')" (click)="mobileMenuActive = false">&#9679; Component-one</a>
+            <a (click)="navigate('/componenttwo')" (click)="mobileMenuActive = false">&#9679; Component-two</a>
+
+        </div>
+
+
+
+    </div>
+    <p-tabView #pt >
+        <p-tabPanel header="todo" >
+            todo
+        </p-tabPanel>
+    </p-tabView>
+
+</div>
