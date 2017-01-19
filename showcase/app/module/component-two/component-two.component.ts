@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
     selector: 'component-two',
     template:  `
         <p>
-            component-one works
+            component-two works
             
         </p>
         <button pButton (click)="childRoute()">click</button>
